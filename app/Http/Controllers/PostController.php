@@ -41,7 +41,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
-        return print_r($request);
+        return dd($request);
     }
 
     /**
