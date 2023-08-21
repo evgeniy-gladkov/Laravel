@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 Route::get('/contact', function(){
     return view('contact');
 });
@@ -34,7 +34,7 @@ Route::match(['post', 'get', 'PUT'], '/email', function(){
     return '<h1>Email Page Match</h1>';
 })->name('email');
 
-Route::view('test', 'test', ['var_test'=>'Test Page']);
+Route::view('test', 'test', ['var_test'=>'Test Page'])->name('test');
 
 // Route::redirect('test', 'contact', 302);
 // Route::permanentRedirect('test', 'contact');
@@ -73,7 +73,10 @@ Route::prefix('admin')->group(function(){
     });
 });
 
-
+Route::fallback(function(){
+    // return redirect()->route('index');
+    abort(404, 'Oops page not found');
+});
 
 
 
