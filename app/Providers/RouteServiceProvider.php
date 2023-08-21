@@ -47,6 +47,9 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
+
+        // Route::pattern передаваемые аргументы разрешаем в id только цифры
+        Route::pattern('id', '[0-9]+');
     }
 
     /**
