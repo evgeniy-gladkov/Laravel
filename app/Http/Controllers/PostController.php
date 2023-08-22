@@ -53,6 +53,7 @@ class PostController extends Controller
     public function show($id)
     {
         //
+        return "Post $id";
     }
 
     /**
@@ -64,6 +65,7 @@ class PostController extends Controller
     public function edit($id)
     {
         //
+        return view('posts.edit', ['id'=>$id]);
     }
 
     /**
@@ -76,6 +78,9 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
+        dump($id);
+        dd($request);
+        
     }
 
     /**
@@ -87,5 +92,8 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+        dump(__METHOD__);
+        dd($id);
+        
     }
 }

@@ -92,6 +92,8 @@ Route::get('/test', [HomeController::class, 'test']);
 Route::get('/page/{slug}', [PageController::class, 'show']);
 Route::get('/test2', [TestController::class, 'index']);
 
-Route::resource('/posts', PostController::class);
+Route::resource('/posts', PostController::class, ['parameters'=>[
+    'posts' => 'id',
+]]);
 
-// Контроллеры ресурсов 14:15
+// Контроллеры ресурсов 30:20
