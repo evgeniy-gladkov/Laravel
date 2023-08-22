@@ -50,6 +50,7 @@ class RouteServiceProvider extends ServiceProvider
 
         // Route::pattern передаваемые аргументы разрешаем в id только цифры
         Route::pattern('id', '[0-9]+');
+        Route::pattern('slug', '[A-Za-z0-9-]+');
     }
 
     /**
